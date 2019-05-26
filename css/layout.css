@@ -101,7 +101,7 @@ header.static {
 header .logo {
    position: relative;
    height: 54px;
-   width: 150px;
+   width: 165px;
    float: left;
 }
 header .logo a {
@@ -112,6 +112,10 @@ header .logo a {
    top: 11px;
    font-size: 1.3em;
    color: #fff 
+}
+header .col{
+    display: flex;
+    justify-content: center
 }
 
 /* primary navigation
@@ -140,38 +144,20 @@ ul#nav {
    /* left align the menu */
    text-align: left;
 }
-ul#nav li {
-	position: relative;
-	list-style: none;
-   height: 54px;
-
-   display: inline-block;
-}
-ul#nav > li.active a {
-   background: #11ABB0;
-   color: #fff !important;
+ul#nav > a.active {
+   background: #11ABB0
 }
 
 /* Links */
-ul#nav li a {
-   display: block;
+ul#nav > a {
+   display: inline-block;
    padding: 0 14px;
    line-height: 54px;
 	text-decoration: none;
    text-align: left;
    color: #fff;
-
-	-webkit-transition: color .2s ease-in-out;
-	-moz-transition: color .2s ease-in-out;
-	-o-transition: color .2s ease-in-out;
-	-ms-transition: color .2s ease-in-out;
-	transition: color .2s ease-in-out;
+    cursor: pointer
 }
-
-ul#nav li a:active { background-color: transparent !important; }
-ul#nav li:hover > a,
-ul#nav li.active a { color: #11ABB0; }
-
 
 
 /* ================================================================== */
@@ -180,40 +166,76 @@ ul#nav li.active a { color: #11ABB0; }
 
 /* ================================================================== */
 
-#intro {
+#home {
    background: #111 url(../images/intro-bg.jpg) no-repeat center;
    overflow: hidden;
 }
-
-/* FlexSlider Intro Slider Styles */
-.slides {
-   max-height: 660px;
-   overflow: hidden;
+.aboutme-carousel {
+    margin-top: 100px;
+    min-height: 430px;
+    overflow: hidden
 }
-.slider-text {
-	color: #737E8C;
+.aboutme-carousel {
    text-align: center;
-   width: 85%;
-   margin: 156px auto 66px auto;
+   width: 65%;
+   margin: 120px auto 60px auto;
 }
-.slider-text h2 {
+.aboutme-carousel h2,.callToActionInText {
    font: 56px/78px montserrat-regular, Sans-serif;
    color: #fff;
    text-shadow: 0px 1px 5px rgba(50, 50, 50, .5);
-   padding: 0;
+   padding: 0 0 50px 0;
    margin: 0;
 }
-.slider-text h2 span,
-.slider-text a { color: #11ABB0; }
-
-.slider-text p {
-   font: 17px/36px opensans-light, sans-serif;
-   text-shadow: 0px 1px 2px rgba(0, 0, 0, .3);
-   padding: 0;
-   margin: 18px 10% 0;
+.callToActionInText {
+    cursor: pointer;
+    color: #11ABB0
+}
+.callToActionInText:hover{
+    color: #11ABB0;
+    background: transparent;
+    border: 0 none
 }
 
-
+.callToAction { 
+    color: #fff; 
+    padding: 10px 20px 12px 20px;
+    font-size: 15px;
+    line-height: 30px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border: 3px solid #11ABB0;
+    background: transparent;
+    cursor: pointer
+}
+.callToAction:hover{
+    background: #11ABB0;
+    color: #fff 
+}
+.aboutme-carousel .slick-list {
+    min-height: 330px
+}
+.aboutme-carousel .slick-dots{
+    bottom: 50px
+}
+.aboutme-carousel .slick-dots li button:before {
+    content: ''
+}
+.aboutme-carousel .slick-dots li button{
+    height: 15px;
+    content: '';
+    width: 15px;
+    border: 3px solid #fff;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%
+}
+.aboutme-carousel .slick-dots li button:hover,.aboutme-carousel .slick-dots li.slick-active button{
+    border: 3px solid #11ABB0
+}
 /* Direction Navigation
 --------------------------------------------------------------- */
 .flex-direction-nav a {
@@ -275,11 +297,85 @@ ul#nav li.active a { color: #11ABB0; }
 
 #resume a, #resume a:visited  { color: #C4C4C4; }
 #resume a:hover, #resume a:focus { color: #11ABB0; }
-
+#resume .section-head {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap
+}
 #resume .section-head h2 { color: #11ABB0; }
-#resume .section-head p.desc,
-#resume .section-head .intro { color: #57606B; }
-
+#resume .section-head .intro { 
+    color: #57606B;
+    padding-bottom: 30px
+}
+#resume .section-head .intro p {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 12px
+}
+#resume #education p { margin-bottom: 0}
+#resume .section-head a {
+    border: 2px solid #c4c4c4;
+    padding: 0px 12px 2px 12px;
+    background-color: transparent;
+    color: #c4c4c4;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-top: 10px;
+    max-width: fit-content
+}
+#resume .section-head a:hover {
+    background-color: #444
+}
+#resume .section-head .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px
+}
+#resume .row h3 {
+    color: #c4c4c4;
+    font-weight: normal
+}
+#resume hr{
+    max-width: 1008px;
+    width: 96%;
+    margin: 0 auto 30px auto;
+    border: .5px dotted #576068
+}
+#resume #skills {
+    padding-bottom: 30px
+}
+#resume #skills .col{
+    padding-left: 65px
+}
+#resume #skills .col:nth-child(2){
+    padding-left: 100px
+}
+@media only screen and (max-width: 767px){
+    #resume #skills .col:nth-child(2){
+        padding-left: 65px;
+        padding-top: 30px
+    }
+}
+#resume #skills svg{
+    margin-right: 10px
+}
+#resume #skills ol, #resume #work ul,#resume #education {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 18px
+}
+#resume #skills ol li {
+    margin-bottom: 0
+}
+#resume #work ul li p,#resume #education p{
+    line-height: 20px
+}
+#resume #work ul li p:first-of-type{
+    margin-bottom: 10px
+}
 .services-wrapper { margin-top: 42px; }
 .services-wrapper .col {
    width: 33.33333%;
@@ -290,7 +386,7 @@ ul#nav li.active a { color: #11ABB0; }
    letter-spacing: 1.5px;
    text-transform: uppercase;
    color: #C4C4C4;
-   margin-bottom: 18px;
+   text-align: left
 }
 .services-wrapper p {
    font-size: 16px;
@@ -1285,6 +1381,9 @@ footer .social-links li:first-child { margin-left: 0; }
 
    header.mobile { height: 66px; }
    header.mobile .logo a { top: 22px; }
+    header .col {
+        display: inherit;
+    }
 
    .mobile #nav-wrap {
       position: absolute;
@@ -1343,11 +1442,11 @@ footer .social-links li:first-child { margin-left: 0; }
 
    /* display menu panels */
 	.mobile #nav-wrap:target > ul#nav	{
-	   display: block;
-      padding: 12px 25px 24px 25px;
+	   display: flex;
       background: #4c4e5a;
       margin: 0;
-      clear: both;
+        flex-direction: column;
+        min-width: 100px
    }
    .mobile #nav-wrap ul#nav li { border-bottom: 1px dotted #595B6A; }
    .mobile #nav-wrap ul#nav li a {

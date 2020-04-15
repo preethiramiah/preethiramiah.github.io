@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{vx99:function(e,t,a){"use strict";a.r(t),a.d(t,"default",(function(){return u}));var n=a("q1tI"),o=a.n(n),r=a("Ji2X"),i=a("ofer"),m=a("hlFM"),c=(a("M29Y"),a("Aw06"));function u(){return o.a.createElement(r.a,{maxWidth:"sm"},o.a.createElement(m.a,{my:4},o.a.createElement(i.a,{variant:"h4",component:"h1",gutterBottom:!0},"Preethi Ramiah Gatsby v4-beta example"),o.a.createElement(c.a,{to:"/"},"Go to the main page")))}}}]);
+//# sourceMappingURL=component---src-pages-blog-js-d509b0a498fe54f5e7f0.js.map
